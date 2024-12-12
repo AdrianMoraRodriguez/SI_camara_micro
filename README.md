@@ -18,21 +18,32 @@ En esta práctica de Unity, se han implementado diversas funcionalidades que per
 
 Para este primer paso, se implementó la funcionalidad que permite reproducir un sonido cuando una araña alcanza un objetivo en la escena. Se utilizó un componente de tipo `AudioSource` que permite reproducir un sonido cuando se produce una colisión o interacción con otro objeto. Este componente requiere asignar un `AudioClip`, que es el archivo de sonido a reproducir. En el código, se detecta la colisión con el objetivo y, al alcanzarlo, se reproduce el sonido asociado al objeto `AudioSource`.
 
+![Ver video](https://github.com/AdrianMoraRodriguez/SI_camara_micro/blob/main/Video/1.gif)
+
+
 ### 2. Captura y reproducción de audio desde el micrófono
 
 En este paso, se logró capturar el sonido desde el micrófono del dispositivo y reproducirlo dentro de la aplicación al presionar una tecla específica. Utilizando la clase `Microphone` de Unity, se accedió al dispositivo de entrada de audio (micrófono), y se configuró para grabar durante un periodo de tiempo determinado. El audio capturado se asignó a un objeto `AudioSource`, el cual permitió la reproducción del sonido cuando el usuario presionaba la tecla `R`. Esta funcionalidad es útil para aplicaciones que requieren la interacción del usuario a través del audio en tiempo real.
+
+![Ver video](https://github.com/AdrianMoraRodriguez/SI_camara_micro/blob/main/Video/2.gif)
 
 ### 3. Mostrar la imagen capturada por la cámara en una pantalla
 
 El siguiente paso consistió en capturar lo que la cámara veía en tiempo real y mostrarlo en una pantalla dentro de la escena de Unity. Para lograr esto, se utilizó el objeto `WebCamTexture`, que permite acceder al flujo de video desde la cámara del dispositivo. La textura generada por esta cámara se asignó a un material de un objeto en la escena (por ejemplo, un `Quad` o `RawImage`), lo que permitió mostrar la imagen capturada directamente en la interfaz o en un objeto 3D. De esta manera, se pudo visualizar en tiempo real lo que la cámara estaba grabando.
 
+![Ver video](https://github.com/AdrianMoraRodriguez/SI_camara_micro/blob/main/Video/3.gif)
+
 ### 4. Mostrar el nombre de la cámara en la consola
 
 Otro objetivo fue mostrar el nombre de la cámara utilizada en la consola de Unity. Utilizando la clase `WebCamTexture`, se pudo acceder a los dispositivos de cámara disponibles en el sistema y obtener el nombre del primer dispositivo de cámara conectado. Este nombre se mostró en la consola de Unity mediante el método `Debug.Log()`, lo que facilita la identificación de la cámara en uso, especialmente cuando se tienen múltiples cámaras conectadas al dispositivo.
 
+![Ver video](https://github.com/AdrianMoraRodriguez/SI_camara_micro/blob/main/Video/4.gif)
+
 ### 5. Capturar fotogramas aislados y almacenarlos como imágenes fijas
 
 El último paso consistió en capturar fotogramas aislados de la cámara y almacenarlos como imágenes fijas en el disco. Para esto, se utilizó la función `GetPixels()` de la clase `WebCamTexture` para obtener la información de píxeles del fotograma actual de la cámara. Luego, esos píxeles se almacenaron en un objeto `Texture2D`. Después de aplicar los píxeles a la textura, esta se guardó como un archivo PNG utilizando el método `EncodeToPNG()`, que permite convertir la textura en un archivo de imagen. La imagen se guardó en una carpeta específica del sistema, y cada captura se numeró de manera secuencial.
+
+![Ver video](https://github.com/AdrianMoraRodriguez/SI_camara_micro/blob/main/Video/5.gif)
 
 ### Problemas y soluciones
 
